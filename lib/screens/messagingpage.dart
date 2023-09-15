@@ -50,21 +50,21 @@ class _MessagingPageState extends State<MessagingPage> {
                   child: const Text('Discutions'),
                   onPressed: () {},
                   style: TextButton.styleFrom(
-                    primary: Colors.black, // Couleur du texte
+                    foregroundColor: Colors.black,
                   ),
                 ),
                 TextButton(
                   child: const Text('Statut'),
                   onPressed: () {},
                   style: TextButton.styleFrom(
-                    primary: Colors.black, // Couleur du texte
+                    foregroundColor: Colors.black,
                   ),
                 ),
                 TextButton(
                   child: const Text('Activités'),
                   onPressed: () {},
                   style: TextButton.styleFrom(
-                    primary: Colors.black, // Couleur du texte
+                    foregroundColor: Colors.black,
                   ),
                 ),
               ],
@@ -72,7 +72,7 @@ class _MessagingPageState extends State<MessagingPage> {
           ),
           Expanded(
             child: FutureBuilder<List<Message>>(
-              future: MessageService.fetchMessages(), // Utilisez votre fonction fetchMessages ici.
+              future: MessageService.fetchMessages(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return Center(

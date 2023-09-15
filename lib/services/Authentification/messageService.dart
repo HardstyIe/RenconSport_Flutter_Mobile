@@ -23,7 +23,7 @@ class MessageService {
 
   static Future<List<Message>> fetchMessages() async {
     try {
-      final response = await _dio.get(url); // Assurez-vous que cette URL est correcte.
+      final response = await _dio.get(url);
 
       if (response.statusCode == 200) {
         final List<dynamic> messageDataList = response.data as List<dynamic>;
