@@ -17,8 +17,8 @@ class _SwipeCardState extends State<SwipeCard> {
   MatchEngine? _matchEngine;
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
   List<String> _names = [
-    "Red",
-    "Blue",
+    "Brown",
+    "Teal",
     "Green",
     "Yellow",
     "Orange",
@@ -27,8 +27,8 @@ class _SwipeCardState extends State<SwipeCard> {
     "Pink"
   ];
   List<Color> _colors = [
-    Colors.red,
-    Colors.blue,
+    Colors.brown,
+    Colors.teal,
     Colors.green,
     Colors.yellow,
     Colors.orange,
