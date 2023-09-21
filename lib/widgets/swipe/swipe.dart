@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:swipe_cards/draggable_card.dart';
 import 'package:swipe_cards/swipe_cards.dart';
+import 'package:renconsport/widgets/swipe/popup/popup_bio.dart';
 
 class SwipeCard extends StatefulWidget {
   SwipeCard({Key? key, this.title}) : super(key: key);
@@ -50,12 +51,6 @@ class _SwipeCardState extends State<SwipeCard> {
           nopeAction: () {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
               content: Text("Nope ${_names[i]}"),
-              duration: Duration(milliseconds: 500),
-            ));
-          },
-          superlikeAction: () {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text("Superliked ${_names[i]}"),
               duration: Duration(milliseconds: 500),
             ));
           },
@@ -115,14 +110,7 @@ class _SwipeCardState extends State<SwipeCard> {
                 decoration:
                     BoxDecoration(border: Border.all(color: Colors.red)),
                 child: Text('Nope'),
-              ),
-              superLikeTag: Container(
-                margin: const EdgeInsets.all(15.0),
-                padding: const EdgeInsets.all(3.0),
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.orange)),
-                child: Text('Super Like'),
-              ),
+              ),               
             ),
           ),
           Align(
@@ -130,21 +118,23 @@ class _SwipeCardState extends State<SwipeCard> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
-                    onPressed: () {
-                      _matchEngine!.currentItem?.nope();
-                    },
-                    child: Text("Nope")),
-                ElevatedButton(
-                    onPressed: () {
-                      _matchEngine!.currentItem?.superLike();
-                    },
-                    child: Text("Superlike")),
-                ElevatedButton(
-                    onPressed: () {
-                      _matchEngine!.currentItem?.like();
-                    },
-                    child: Text("Like"))
+                 IconButton(
+                icon: Icon(Icons.close),
+                iconSize: 55,
+                color: Colors.red,
+                onPressed: () {
+                  _matchEngine!.currentItem?.nope();
+                },
+              ),
+              PopupBio(),
+              IconButton(
+                icon: Icon(Icons.thumb_up_alt_sharp),
+                iconSize: 50,
+                color: Colors.blue,
+                onPressed: () {
+                  _matchEngine!.currentItem?.like();
+                },
+              ),
               ],
             ),
           )

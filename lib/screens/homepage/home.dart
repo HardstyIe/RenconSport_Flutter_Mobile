@@ -28,7 +28,7 @@ class _HomeState extends ConsumerState<Home> {
     ];
 
     return Scaffold(
-      appBar: CustomAppBar(showBackButton: true),
+      // appBar: CustomAppBar(showBackButton: true),
       body: widgets[index],
       bottomNavigationBar: CustomNavigationBar(
         onTap: (newIndex) {
